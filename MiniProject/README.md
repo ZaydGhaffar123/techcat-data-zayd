@@ -4,8 +4,8 @@
 1. [Overview](#overview)
 2. [DDL scripts](#ddl-scripts)
 3. [Design Diagram](#design-diagram)
-4. [Discussion](#Discussion)
-5. [ETL Pipeline](#ETLPipeline)
+4. [ETL Pipeline](#ETLPipeline)
+5. [Discussion](#Discussion)
 6. [Summary](#Summary)
 
 
@@ -66,7 +66,14 @@ create or replace TRANSIENT TABLE TECHCATALYST_DE.ZAYD.SONGPLAYS_FACT (
 **Diagram Description**: The design below outlines the entire ETL process and data architecture for Sparkify.
 ![dataArchitechtureDiagram](image/miniprojectdd.jpg)
 
+The diagram below displays the star schema of our final product in Snowflake.
+![dataArchitechtureDiagram](image/starschema.jpg)
 
 ## ETL Pipeline
 The ETL process for Sparkify extracts user activity and song data from JSON files in S3, transforms the data by cleaning and normalizing it,  and then reloading it into S3 with structured naming and categorization. Finally, the data is staged and loaded into Snowflake tables for detailed analysis and reporting.
 
+## Sparkify: Data Lake and Data Warehouse
+A data lake like S3 is useful for a startup like Sparkify because it allows for the economical storage of vast amounts of diverse data like unstructured and structured data. In contrast, a datawarehouse like Snowflake enables Sparkify to efficiently analyze and store structured data. These tools together provide a comprehensive data management solution.
+
+## Summary
+This ETL approach not only ensures high data quality and consistency across different data sources but also enhances Sparkify's analytical capabilities, enabling more sophisticated analysis and reporting. By leveraging cloud-based technologies and strategic data structuring, this pipeline has improved scalability and performance of Sparkify's data management systems.
